@@ -1,10 +1,10 @@
 import React from "react";
 import Stock from "./Stock";
 
-function StockContainer({ stocks }) {
+function StockContainer({ stocks, onAddStock }) {
   // Map through all stocks and render them using the Stock component
   const stocksDisplayed = stocks.map((stock) => {
-    return <Stock key={stock.key} stock={stock} />
+  return <Stock key={stock.id} stock={stock} onStockClick={onAddStock}  />
   })
   return (
     <div>
